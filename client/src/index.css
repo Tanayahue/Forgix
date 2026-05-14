@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --bg-top: #10182d;
+  --bg-bottom: #080d18;
+  --surface: #11182b;
+  --surface-soft: #0f1727;
+  --surface-elevated: rgba(17, 24, 43, 0.9);
+  --nav-bg: rgba(11, 16, 32, 0.72);
+  --muted-bg: rgba(17, 24, 43, 0.72);
+  --preview-bg: rgba(8, 13, 24, 0.9);
+  --border: #1f2940;
+  --text-primary: #f3f6fb;
+  --text-secondary: #9aa4b6;
+  --accent: #6366f1;
+  --accent-secondary: #22d3ee;
+  --accent-soft: rgba(99, 102, 241, 0.12);
+  --accent-strong: rgba(99, 102, 241, 0.3);
+  --accent-secondary-soft: rgba(34, 211, 238, 0.14);
+  --accent-secondary-strong: rgba(34, 211, 238, 0.28);
+  --shadow-lg: 0 32px 90px rgba(2, 8, 23, 0.45);
+  --shadow-xl: 0 48px 160px rgba(2, 8, 23, 0.72);
+  --shell-glow: rgba(99, 102, 241, 0.16);
+  --selection: rgba(99, 102, 241, 0.3);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #eef4ff;
+  --bg-top: #f9fbff;
+  --bg-bottom: #dfe9ff;
+  --surface: #ffffff;
+  --surface-soft: #f5f8ff;
+  --surface-elevated: rgba(255, 255, 255, 0.86);
+  --nav-bg: rgba(248, 251, 255, 0.8);
+  --muted-bg: rgba(255, 255, 255, 0.84);
+  --preview-bg: rgba(223, 233, 255, 0.82);
+  --border: rgba(149, 161, 192, 0.32);
+  --text-primary: #182235;
+  --text-secondary: #5f6f8f;
+  --accent: #4f46e5;
+  --accent-secondary: #0891b2;
+  --accent-soft: rgba(79, 70, 229, 0.1);
+  --accent-strong: rgba(79, 70, 229, 0.28);
+  --accent-secondary-soft: rgba(8, 145, 178, 0.12);
+  --accent-secondary-strong: rgba(8, 145, 178, 0.24);
+  --shadow-lg: 0 24px 60px rgba(76, 99, 138, 0.16);
+  --shadow-xl: 0 40px 110px rgba(76, 99, 138, 0.2);
+  --shell-glow: rgba(79, 70, 229, 0.14);
+  --selection: rgba(79, 70, 229, 0.2);
+}
+
+html {
+  background:
+    radial-gradient(circle at top center, var(--shell-glow), transparent 28%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 36%, var(--bg-bottom) 100%);
+  transition: background 220ms ease, color 220ms ease;
+}
+
+body {
+  min-height: 100vh;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  transition: background 220ms ease, color 220ms ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--text-primary);
+}
+
+.theme-shell {
+  background:
+    radial-gradient(circle at top center, color-mix(in srgb, var(--shell-glow) 84%, transparent), transparent 26%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 36%, var(--bg-bottom) 100%);
+  color: var(--text-primary);
+}
+
+.theme-panel {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(18px);
+}
+
+.theme-panel-soft {
+  background: color-mix(in srgb, var(--surface-soft) 78%, transparent);
+  border: 1px solid var(--border);
+}
+
+.theme-pill {
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.theme-accent-text {
+  color: var(--accent);
+}
+
+.theme-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(18px);
+}
+
+.theme-muted-button {
+  background: var(--muted-bg);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.theme-preview-frame {
+  background: var(--preview-bg);
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.16);
+}
