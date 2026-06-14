@@ -10,7 +10,7 @@ import websiteRouter from "./routes/website.routes.js"
 import billingRouter from "./routes/billing.routes.js"
 const app = express()
 const port = process.env.PORT || 5000
-const clientUrl = process.env.CLIENT_URL || "http://localhost:5173"
+const clientUrl = process.env.CLIENT_URL || "https://forgix-2.onrender.com"
 
 app.use(express.json({ limit: "12mb" }))
 app.use(cookieParser())
