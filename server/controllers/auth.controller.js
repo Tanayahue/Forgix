@@ -5,7 +5,7 @@ const isProduction = process.env.NODE_ENV === "production"
 
 const getCookieOptions = () => ({
     httpOnly: true,
-    secure: isProduction,
+    secure: true,
     sameSite: isProduction ? "none" : "lax",
     maxAge: 7 * 24 * 60 * 60 * 1000,
     path: "/"
